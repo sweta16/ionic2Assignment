@@ -37,7 +37,9 @@ export class LoginPage {
                 });
 
                 //Disable side menu on login screen
-                this.menuCtrl.enable(false, 'authenticated');
+                
+                this.menuCtrl.enable(false);
+                //console.log(this.menuCtrl)
   }
 
   ionViewDidLoad() {

@@ -34,7 +34,7 @@ export class SecurityPage {
                 });
 
                 //Disable side menu on security screen
-                this.menuCtrl.enable(false, 'authenticated');
+                this.menuCtrl.enable(false);
 
   }
 
@@ -50,7 +50,7 @@ export class SecurityPage {
     let result= this.userServiceProvider.security(data)
     if(result === 200)
     {
-      this.menuCtrl.enable(false, 'authenticated');
+      this.menuCtrl.enable(true);
       this.navCtrl.setRoot(HomePage);
       this.toastServiceProvider.toast('Welcome User')
     }
