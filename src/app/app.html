@@ -1,17 +1,17 @@
 <ion-menu [content]="content">
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
+     <div class="profile-section">
+            <img class="profile-img" src="assets/img/avatar.jpg">
+            <h6>Sweta</h6>
+        </div>
+        <div class="menu-items">
+          <ion-list no-lines>
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              <ion-icon [name]="p.icon"></ion-icon>
+              {{p.title}}
+            </button>
+          </ion-list>
+     </div>
   </ion-content>
 
 </ion-menu>

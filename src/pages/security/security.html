@@ -1,0 +1,39 @@
+<!--
+  Generated template for the SecurityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="no-shadow">
+
+  <ion-navbar light text-center>
+    <ion-title>Security</ion-title>
+    <span class="bottom-line"></span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-app no-scroll">
+	<p text-center> To go to home page please fill both the security question</p>
+	<form padding class="login-form" name="login"  [formGroup]="securityForm" (ngSubmit)="onSubmit()">
+		<div class="item-container">
+		  <ion-item>
+		    <ion-label floating>What is your Birth Date?</ion-label>
+        <ion-datetime  displayFormat="MM-DD-YYYY" pickerFormat="DD MMMM YYYY"   [(ngModel)]="user.birthDate" name="expiryDate" formControlName="birthDate"></ion-datetime>
+		  </ion-item>
+		  <ion-label class="validation-error" *ngIf="securityForm.get('birthDate').hasError('required') && !securityForm.get('birthDate').pristine"><ion-icon name="alert"></ion-icon> This field is required</ion-label>
+	  </div>
+	  <div class="item-container">
+		  <ion-item>
+		    <ion-label floating>What is your pnone's last four digit?</ion-label>
+		    <ion-input type="number" [(ngModel)]="user.phoneNumber" formControlName="phoneNumber" ></ion-input>
+		  </ion-item>
+		   <ion-label class="validation-error" *ngIf="securityForm.get('phoneNumber').hasError('required') && !securityForm.get('phoneNumber').pristine"><ion-icon name="alert"></ion-icon> This field is required</ion-label>
+			 <ion-label class="validation-error" *ngIf="securityForm.get('phoneNumber').hasError('maxlength') && !securityForm.get('phoneNumber').pristine"><ion-icon name="alert"></ion-icon> max length must be 4</ion-label>
+		</div>
+    <div class="padding-10">
+	    <button ion-button margin-top-40 block  color="secondary" [disabled]="!securityForm.valid">Next</button>
+    </div>
+	</form>
+</ion-content>

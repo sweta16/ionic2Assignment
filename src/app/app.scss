@@ -14,3 +14,85 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+//css for form
+
+p{
+	font-size: 18px;
+	color:  color($colors, dark);
+}
+
+.bottom-line {
+			display: inline-block;
+			width: 23px;
+			height: 1px;
+			background-color: color($colors, secondary);
+		}
+		
+.button {
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	height: 4.5rem;
+    border-radius: 5px;
+    border: 2px dotted white ;
+	a {
+		color: white;
+		&:hover {
+			color: white;
+			opacity: 1;
+		}
+	}
+}
+
+ion-label.validation-error {
+		color: color($colors, danger);
+		font-size: 12px;
+		position: absolute;
+		margin: 5px 0 0 0;
+	}
+
+.item-container {
+		margin-bottom: 24px;
+		
+	}
+
+
+	
+		.profile-section{
+			padding: 20px;
+			width: 100%;
+			text-align: left;
+			background-color: color($colors, primary);
+		}
+		.profile-img {
+			height:64px; 
+			width:64px;
+			border-radius: 50%;
+		}
+		h6 {
+			font-size: 14px;
+			color: white;
+			margin-bottom: 0px;
+		}
+		
+		.menu-items {
+			padding-top: 20px;
+
+			ion-list {
+				.item {
+					padding: 2px 20px;
+					background: transparent;
+				}
+			}
+		
+		
+		ion-icon{
+			padding-right: 12px;
+			position: relative;
+			top: 2px;
+		}
+		
+	
+}

@@ -1,0 +1,50 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-header class="no-shadow">
+
+  <ion-navbar light text-center>
+    <ion-title>Login</ion-title>
+    <span class="bottom-line"></span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-app no-scroll">
+	<p text-center>Welcome, please fill the credential to continue</p>
+	<form padding class="form-type-1 login-form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+		<div class="item-container">
+		  <ion-item>
+		    <ion-label floating>User Name</ion-label>
+		    <ion-input type="text" [(ngModel)]="user.userId" formControlName="userId" ></ion-input>
+		  </ion-item>
+		  <ion-label class="validation-error" *ngIf="loginForm.get('userId').hasError('required') && !loginForm.get('userId').pristine"><ion-icon name="alert"></ion-icon> This field is required</ion-label>
+	  </div>
+	  <div class="item-container">
+		  <ion-item>
+		    <ion-label floating>Password</ion-label>
+		    <ion-input type="password" [(ngModel)]="user.password" formControlName="password" ></ion-input>
+		  </ion-item>
+		  <ion-label class="validation-error" *ngIf="loginForm.get('password').hasError('required') && !loginForm.get('password').pristine"><ion-icon name="alert"></ion-icon> This field is required</ion-label>
+			<ion-label class="validation-error" *ngIf="loginForm.get('password').hasError('invalid') && !loginForm.get('password').pristine"><ion-icon name="alert"></ion-icon> password must contain 1 capital, 1 small and atleast 8 length</ion-label>
+		</div>
+    <div class="padding-10">
+	    <button ion-button margin-top-40 block  color="secondary" [disabled]="!loginForm.valid">Next</button>
+    </div>
+	  	<ion-row>
+			<ion-col>
+		  		<a class="light-grey" (tap)=goToForgotPassword()>Forgot Password?</a>
+		  	</ion-col>
+		  	<ion-col text-right>
+		  		<span (tap)=goToSignUp()>New User? <a>Sign Up</a></span>
+		  	</ion-col>
+		</ion-row>
+	</form>
+</ion-content>

@@ -1,0 +1,25 @@
+page-home {
+    .profile-top-section {
+		position: relative;
+		padding: 40px 0;
+		background-color:  color($colors, primary);
+		z-index: 10;
+
+		img {
+			width: 80px;
+		    border-radius: 50%;
+		    margin-bottom: 5px;
+		}
+
+		h5 {
+			margin: 0;
+            color: white;
+		}
+	}
+
+    h6{
+        color:color($colors, primary);
+    }
+
+
+}
